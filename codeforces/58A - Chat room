@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	string s;
+	cin>>s;
+	int i;
+	char search='h';
+	int found=1;
+	for(i=0;i<s.length();i++)
+	{
+		if(s[i]=='h' && found==1)
+		{
+			found++;
+		}
+		else if(s[i]=='e' && found==2)
+		{
+			found++;
+		}
+		else if(s[i]=='l' && (found==3||found==4))
+		{
+			found++;
+		}
+		else if(s[i]=='o' && found==5)
+		{
+			found++;
+		}
+
+	}
+	if(found==6)
+	{
+		cout<<"YES"<<"\n";
+	}
+	else
+	{
+		cout<<"NO"<<"\n";
+	}
+	return 0;
+}
