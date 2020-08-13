@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin>>n;
+	int i,j,k,found=0;
+	vector<int> vect;
+	int arr[3]={0,4,7};
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			for(k=0;k<3;k++)
+			{
+				vect.push_back(arr[i]*100+arr[j]*10+arr[k]);
+
+			}
+
+		}
+	}
+	for(i=1;i<vect.size();i++)
+	{
+		if(n%vect[i]==0)
+		{
+			cout<<"YES"<<"\n";
+			found=1;
+			break;
+		}
+	}
+	if(found==0)
+	{
+		cout<<"NO"<<"\n";
+	}
+
+
+
+	return 0;
+}
