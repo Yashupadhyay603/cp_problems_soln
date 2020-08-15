@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int a,b,c;
+	cin>>a>>b>>c;
+	vector<int> vect={a+b+c,(a+b)*c,a+b*c,a*b+c,a*(b+c),a*b*c};
+	sort(vect.begin(),vect.end(),greater<int>());
+	cout<<vect[0]<<"\n";
+	return 0;
+}
