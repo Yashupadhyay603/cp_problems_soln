@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n;
+		long long k;
+		cin>>n>>k;
+		vector<int> vect(n);
+		for(int i=0;i<n;i++)
+		{
+			cin>>vect[i];
+		}
+		if(k>1)
+		{
+			k=2+k%2;
+		}
+		while(k--)
+		{
+			int m=-1000000000;
+			for(int f=0;f<n;f++)
+			{
+				m=max(m,vect[f]);
+			}
+			for(int f=0;f<n;f++)
+			{
+				vect[f]=m-vect[f];
+			}
+		}
+		for(int i=0;i<n;i++)
+		{
+			cout<<vect[i]<<(i+1==n? "\n":" ");
+		}
+
+	}
+	return 0;
+}
