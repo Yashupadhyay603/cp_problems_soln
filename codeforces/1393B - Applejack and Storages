@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int const maxn=100000;
+int arr[maxn]={0};
+
+int main()
+{
+	int n;
+	cin>>n;
+	char p;
+	int m;
+	int k;
+	int div_2=0;
+	int div_4=0;
+	
+	for(int i=0;i<n;i++)
+	{
+		cin>>k;
+		div_2-=arr[k]/2;
+		div_4-=arr[k]/4;
+		arr[k]++;
+		div_2+=arr[k]/2;
+		div_4+=arr[k]/4;
+	}
+	int q;
+	cin>>q;
+	for(int i=0;i<q;i++)
+	{
+		cin>>p>>m;
+		div_2=div_2-arr[m]/2;
+		div_4=div_4-arr[m]/4;
+		if(p=='-')
+		{
+			arr[m]--;
+		}
+		else if(p=='+')
+		{
+			arr[m]++;
+		}
+		div_2=div_2+arr[m]/2;
+		div_4=div_4+arr[m]/4;
+		
+		
+		if((div_2>=4)&&(div_4>=1))
+		{
+			cout<<"YES";
+		}
+		else
+		{
+			cout<<"NO";
+		}
+		
+
+		cout<<"\n";
+		
+	}
+	return 0;
+}
